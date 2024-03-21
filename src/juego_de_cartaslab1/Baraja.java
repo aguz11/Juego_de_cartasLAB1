@@ -31,10 +31,14 @@ public class Baraja {
 
     /* Solo un metodo de prueba para que muestra todas las cartas */
     public void mostrarPrueba() {
+        int cant = 0;
         for (Carta cart : cartas) {
             System.out.println(cart);
+            cant++;
         }
+        System.out.println("Cantidad:" + cant);
 
     }
+    // cartanMonton
 
 }
