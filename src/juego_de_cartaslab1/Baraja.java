@@ -62,7 +62,6 @@ public class Baraja {
     }
     // cartanMonton
 
->>>>>>> 642be465c946e5db5b4909905d99aa4f884fc302
 }
     
 
