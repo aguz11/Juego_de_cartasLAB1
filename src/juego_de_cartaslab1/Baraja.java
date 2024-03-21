@@ -17,7 +17,7 @@ public class Baraja {
         this.monton = new ArrayList<>();
         inicializarBaraja();
     }
-<<<<<<< HEAD
+
     
     public Carta siguienteCarta(){
     if (!cartas.isEmpty()) {
@@ -36,7 +36,7 @@ public class Baraja {
             System.out.println(carta);
         }
     }
-=======
+
 
     /* Inicializa la baraja de manera secuencial */
     private void inicializarBaraja() {
@@ -62,7 +62,7 @@ public class Baraja {
     }
     // cartanMonton
 
->>>>>>> 642be465c946e5db5b4909905d99aa4f884fc302
+
 }
     
 
