@@ -18,6 +18,25 @@ public class Baraja {
         inicializarBaraja();
     }
 
+    public Carta siguienteCarta() {
+        if (!cartas.isEmpty()) {
+            Carta siguiente = cartas.remove(0);
+            monton.add(siguiente);
+            System.out.println("ha sacado la carta: " + siguiente);
+            return siguiente;
+        } else {
+            System.out.println("no hay más cartas en la baraja.");
+            return null;
+        }
+    }
+
+    public void mostrarBaraja() {
+        System.out.println("Baraja:");
+        for (Carta carta : cartas) {
+            System.out.println(carta);
+        }
+    }
+
     /* Inicializa la baraja de manera secuencial */
     private void inicializarBaraja() {
         String[] palos = { "Espadas", "Bastos", "Oros", "Copas" };
@@ -42,4 +61,5 @@ public class Baraja {
     }
     // cartanMonton
 
+    >>>>>>>642 be465c946e5db5b4909905d99aa4f884fc302
 }
