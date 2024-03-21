@@ -41,4 +41,22 @@ public class Baraja {
     }
     // cartanMonton
 
+    //• darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de cartas. 
+    //En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero debemos indicárselo al usuario.
+    
+     public void darCartas(int nroCartas) {
+
+        if (nroCartas > monton.size()) {
+            System.out.println("No se pueden dar más cartas de las que tiene el mazo!!!");
+        } else {
+            if (nroCartas > cartasDisponibles()) {
+                System.out.println("No hay suficientes cartas en el mazo!!!");
+            } else {
+                for (int i = 0; i < nroCartas; i++) {
+                    siguienteCarta();
+                }
+            }
+        }
+
+    }
 }
