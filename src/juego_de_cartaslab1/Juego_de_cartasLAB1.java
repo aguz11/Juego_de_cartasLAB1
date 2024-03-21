@@ -9,5 +9,5 @@ public class Juego_de_cartasLAB1 {
         baraja.mostrarPrueba();
 
     }
-
+    // Collections.shuffle
 }
