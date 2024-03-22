@@ -1,4 +1,3 @@
-
 package juego_de_cartaslab1;
 
 import java.util.ArrayList;
@@ -9,6 +8,7 @@ import java.util.List;
  * @author Ferrando Carlos
  */
 public class Baraja {
+
     private List<Carta> cartas;
     private List<Carta> monton;
 
@@ -18,6 +18,8 @@ public class Baraja {
         inicializarBaraja();
     }
 
+    //siguienteCarta(): devuelve la siguiente carta que está en la baraja, 
+    //cuando no haya más o se haya llegado al final, se indica al usuario que no hay más cartas.
     public Carta siguienteCarta() {
         if (!cartas.isEmpty()) {
             Carta siguiente = cartas.remove(0);
@@ -30,6 +32,8 @@ public class Baraja {
         }
     }
 
+    //mostrarBaraja(): muestra todas las cartas hasta el final. 
+    //Es decir, mostrará las cartas que no se han sacado.
     public void mostrarBaraja() {
         System.out.println("Baraja:");
         for (Carta carta : cartas) {
@@ -39,7 +43,7 @@ public class Baraja {
 
     /* Inicializa la baraja de manera secuencial */
     private void inicializarBaraja() {
-        String[] palos = { "Espadas", "Bastos", "Oros", "Copas" };
+        String[] palos = {"Espadas", "Bastos", "Oros", "Copas"};
         for (int numero = 1; numero <= 12; numero++) {
             if (numero != 8 && numero != 9) {
                 for (String palo : palos) {
@@ -60,23 +64,26 @@ public class Baraja {
 
     }
     // cartanMonton
-
+    
+    //• cartasDisponibles(): indica el número de cartas que aún se puede repartir.
+    public int cartasDisponibles() {
+        return monton.size();
+    }
 
     //• darCartas(): dado un número de cartas que nos pidan, le devolveremos ese número de cartas. 
     //En caso de que haya menos cartas que las pedidas, no devolveremos nada, pero debemos indicárselo al usuario.
-    
-     public void darCartas(int nroCartas) {
+    public void darCartas(int nroCartas) {
 
         if (nroCartas > monton.size()) {
             System.out.println("No se pueden dar más cartas de las que tiene el mazo!!!");
         } else {
-//            if (nroCartas > cartasDisponibles()) {
-//                System.out.println("No hay suficientes cartas en el mazo!!!");
-//            } else {
-//                for (int i = 0; i < nroCartas; i++) {
-//                    //siguienteCarta();
-//                }
-//            }
+            if (nroCartas > cartasDisponibles()) {
+                System.out.println("No hay suficientes cartas en el mazo!!!");
+            } else {
+                for (int i = 0; i < nroCartas; i++) {
+                    siguienteCarta();
+                }
+            }
         }
 
     }
